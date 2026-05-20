@@ -177,6 +177,9 @@ android {
         ndkVersion "21.4.7075529"
 
         multiDexEnabled true
+        
+        buildConfigField "int", "APP_ID", System.getenv("APP_ID") ?: "0"
+        buildConfigField "String", "APP_HASH", "\"${System.getenv("APP_HASH") ?: ""}\""
 
         vectorDrawables.generatedDensities = ['mdpi', 'hdpi', 'xhdpi', 'xxhdpi']
 
